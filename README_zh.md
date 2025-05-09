@@ -1,9 +1,9 @@
 [中文阅读](./README_zh.md)
 # FantasyTalking: Realistic Talking Portrait Generation via Coherent Motion Synthesis
 
-[![Home Page](https://img.shields.io/badge/Project-<Website>-blue.svg)](https://fantasy-amap.github.io/fantasy-talking/)
+[![Home Page](https://img.shields.io/badge/Project-FantasyTalking-blue.svg)](https://fantasy-amap.github.io/fantasy-talking/)
 [![arXiv](https://img.shields.io/badge/Arxiv-2504.04842-b31b1b.svg?logo=arXiv)](https://arxiv.org/abs/2504.04842)
-[![hf_paper](https://img.shields.io/badge/🤗-Paper%20In%20HF-red.svg)](https://huggingface.co/papers/2504.04842)
+[![hf_paper](https://img.shields.io/badge/🤗-FantasyTalking-red.svg)](https://huggingface.co/acvlab/FantasyTalking)
 
 ## 🔥 Latest News!!
 * 2025年4月29日: 我们的工作被加入到[ComfyUI-Wan](https://github.com/kijai/ComfyUI-WanVideoWrapper) ! 感谢 [kijai](https://github.com/kijai) 更新 👏!
