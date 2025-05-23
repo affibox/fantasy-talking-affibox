@@ -8,17 +8,18 @@ RUN apt-get update && apt-get install -y \
 # 2. Set workdir
 WORKDIR /workspace
 
-# 3. Copy code (for serverless, RunPod will clone your repo)
-# 4. Install requirements
+# 3. Copy requirements and install
 COPY requirements.txt ./
 RUN pip3 install --upgrade pip
 RUN pip3 install -r requirements.txt
 
-# 5. Install optional acceleration
-RUN pip3 install flash_attn huggingface_hub
+# 4. Install huggingface_hub cli
+RUN pip3 install huggingface_hub
 
-# 6. Download models (optional: could be handled in entrypoint)
-# -- Skipping auto-download to keep image light. Handle on first run or in entrypoint.
+# 5. Download models from HuggingFace
+RUN huggingface-cli download Wan-AI/Wan2.1-I2V-14B-720P --local-dir ./models/Wan2.1-I2V-14B-720P && \
+    huggingface-cli download facebook/wav2vec2-base-960h --local-dir ./models/wav2vec2-base-960h && \
+    huggingface-cli download acvlab/FantasyTalking fantasytalking_model.ckpt --local-dir ./models
 
-# 7. Default command (for RunPod serverless)
+# 6. Default command
 CMD ["python3", "infer.py", "--image_path", "./assets/images/woman.png", "--audio_path", "./assets/audios/woman.wav"]
